@@ -1,0 +1,16 @@
+### Directories ###
+
+# Build products
+build/
+build-*/
+
+# Editors
+.vscode/
+.VSCodeCounter/
+
+### Files ###
+
+# Editors
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
