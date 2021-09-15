@@ -1,16 +1,12 @@
 /**
- * @file        port/mswin/gettime.h
+ * @file        mswin/gettime.h
  * @copyright   2021 Andrew MacIsaac
  * @remark
  *      SPDX-License-Identifier: BSD-2-Clause
  *
- * @brief       Port implementation to obtain time on Windows platforms.
+ * @brief       Alpha Caeli implementation to obtain time on Windows platforms.
+ *              Must be included via api.h.
  */
-#ifndef PORT_MSWIN_GETTIME_H_
-#define PORT_MSWIN_GETTIME_H_
-
-#include "ll_internal.h"
-
 #if HAVE__FTIME_S
 #   include <sys/timeb.h>
 #   include <sys/types.h>
@@ -20,7 +16,7 @@
 /**
  * Retrieve the current system time on Windows.
  */
-LL_DECLARE_INLINE void _ll_get_time
+AC_DECLARE_INLINE void _ac_get_time
 (
     time_t          *secondsp,      ///< [out] Returned seconds since the Epoch.
     unsigned long   *microsecondsp  ///< [out] Returned microseconds into the current second.
@@ -42,8 +38,6 @@ LL_DECLARE_INLINE void _ll_get_time
  * @param[out]  secondsp        Returned seconds since the Epoch.
  * @param[out]  microsecondsp   Returned fraction of the current second, in microseconds.
  */
-#   define LL_GET_TIME(secondsp, microsecondsp) _ll_get_time((secondsp), (microsecondsp))
+#   define AC_GET_TIME(secondsp, microsecondsp) _ac_get_time((secondsp), (microsecondsp))
 
 #endif /* end HAVE__FTIME_S */
-
-#endif /* end PORT_MSWIN_GETTIME_H_ */

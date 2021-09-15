@@ -32,11 +32,11 @@ set(
     mswin/mutex.c
     posix/gettime.c
 )
-add_library(acae STATIC ${SRCS})
+add_library(ac STATIC ${SRCS})
 
 # Set include paths for library.
 target_include_directories(
-    acae
+    ac
     PUBLIC
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_CURRENT_BINARY_DIR}/include/alpha-caeli
@@ -45,7 +45,7 @@ target_include_directories(
 # Add FreeRTOS includes, if applicable.
 # if (FreeRTOS_FOUND)
 #     target_include_directories(
-#         acae
+#         ac
 #         PRIVATE
 #         ${FREERTOS_INCLUDE}
 #     )
