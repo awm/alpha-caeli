@@ -10,7 +10,7 @@ projects.
 | Feature               | Standard C Library   | Windows            | POSIX              | FreeRTOS           |
 | --------------------: | :------------------: | :----------------: | :----------------: | :----------------: |
 | Mutex                 |                      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| System Time Access    | :heavy_check_mark:\* | :heavy_check_mark: | :heavy_check_mark: |                    |
+| System Time Access    | :heavy_check_mark:   | :heavy_check_mark: | :heavy_check_mark: |                    |
 | Local Time Conversion | :heavy_check_mark:\* | :heavy_check_mark: | :heavy_check_mark: |                    |
 | UTC Time Conversion   | :heavy_check_mark:\* | :heavy_check_mark: | :heavy_check_mark: |                    |
 

@@ -10,24 +10,26 @@
 #define ALPHA_CAELI_API_H_
 
 #include "features.h"
+#include "compiler.h"
+
+/// Mark a parameter as unused.
+#define AC_UNUSED(x) ((void) (x))
 
 /**
  * @section mutex Mutex Ports
  */
-#if AC_THREADING
-#   if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
-#       include "freertos/mutex.h"
-#   endif
-#   if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
-#       include "mswin/mutex.h"
-#   endif
-#   if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
-#       include "posix/mutex.h"
-#   endif
-#   if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
-#       error "No mutex implementation provided, and no compatible existing port found!"
-#   endif
-#endif /* end AC_THREADING */
+#if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
+#    include "freertos/mutex.h"
+#endif
+#if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
+#    include "mswin/mutex.h"
+#endif
+#if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
+#    include "posix/mutex.h"
+#endif
+#if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)
+#    error "No mutex implementation provided, and no compatible existing port found!"
+#endif
 
 /**
  * @section gettime Time Retrieval Ports

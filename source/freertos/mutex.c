@@ -1,25 +1,18 @@
 /**
- * @file        port/freertos/mutex.c
+ * @file        freertos/mutex.c
  * @copyright   2021 Andrew MacIsaac
  * @remark
  *      SPDX-License-Identifier: BSD-2-Clause
  *
- * @brief       Port implementation for FreeRTOS platforms.
+ * @brief       Alpha Caeli port implementation for FreeRTOS platforms.
  */
-#include "ll_internal.h"
+#include "alpha-caeli/api.h"
 
-#if LL_THREADING
-#      include "mutex.h"
+#if (HAVE_FREERTOS_STATIC_SEMAPHORE) || defined(HAVE_FREERTOS_SEMAPHORE) && \
+    HAVE_FREERTOS_XTASKGETSCHEDULERSTATE
 
-#   if (HAVE_FREERTOS_STATIC_SEMAPHORE) || defined(HAVE_FREERTOS_SEMAPHORE) && \
-       HAVE_FREERTOS_XTASKGETSCHEDULERSTATE
+AC_DEFINE_INLINE void _ac_lock_mutex(ac_mutex *mutex);
+AC_DEFINE_INLINE void _ac_unlock_mutex(ac_mutex *mutex);
 
-/// Shared implementation if _ll_lock_mutex is not inlined.
-LL_DEFINE_INLINE void _ll_lock_mutex(ll_mutex *mutex);
-
-/// Shared implementation if _ll_unlock_mutex is not inlined.
-LL_DEFINE_INLINE void _ll_unlock_mutex(ll_mutex *mutex);
-
-#   endif /* end (HAVE_FREERTOS_STATIC_SEMAPHORE || HAVE_FREERTOS_SEMAPHORE) &&
-                 HAVE_FREERTOS_XTASKGETSCHEDULERSTATE */
-#endif /* end LL_THREADING */
+#endif /* end (HAVE_FREERTOS_STATIC_SEMAPHORE || HAVE_FREERTOS_SEMAPHORE) &&
+              HAVE_FREERTOS_XTASKGETSCHEDULERSTATE */

@@ -10,6 +10,9 @@
 #if HAVE_PTHREAD_MUTEX
 #   include <pthread.h>
 
+/// POSIX mutex type.
+typedef pthread_mutex_t ac_mutex;
+
 /**
  * Static initializer for a mutex variable.
  */

@@ -9,10 +9,22 @@
  */
 #if (HAVE_FREERTOS_STATIC_SEMAPHORE || HAVE_FREERTOS_SEMAPHORE) && \
     HAVE_FREERTOS_XTASKGETSCHEDULERSTATE
-#    include <FreeRTOS.h>
-#    include <task.h>
+#   include <FreeRTOS.h>
+#   include <semphr.h>
+#   include <task.h>
 
-#    include <assert.h>
+#   include <assert.h>
+
+/// FreeRTOS mutex structure.
+typedef struct _ac_freertos_mutex
+{
+    volatile int        init_state; ///< Initialization state.
+#   if HAVE_FREERTOS_STATIC_SEMAPHORE
+    StaticSemaphore_t   mutex;      ///< Mutex variable.
+#   else
+    Semaphore_t         mutex;      ///< Mutex variable.
+#   endif
+} ac_mutex;
 
 /// Static initializer for a mutex variable.
 #   define AC_STATIC_MUTEX_INIT { false }

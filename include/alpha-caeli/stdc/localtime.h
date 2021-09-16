@@ -8,9 +8,7 @@
  *              calls.  Must be included via api.h.  This port is limited to single-threaded
  *              environments as it uses library calls which are not thread-safe.
  */
-
-#if !AC_THREADING
-#   include <time.h>
+#include <time.h>
 
 /**
  *  Local time stamp conversion.
@@ -21,5 +19,4 @@
  * @retval  0   Success.
  * @retval  <0  Conversion error.
  */
-#   define AC_CONVERT_LOCAL_TIME(seconds, ptm) ((*(ptm) = *localtime(&(seconds))), 0)
-#endif /* end !AC_THREADING */
+#define AC_CONVERT_LOCAL_TIME(seconds, ptm) ((*(ptm) = *localtime(&(seconds))), 0)

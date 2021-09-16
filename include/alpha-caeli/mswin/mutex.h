@@ -14,11 +14,17 @@
 #   undef WIN32_LEAN_AND_MEAN
 #   undef _WIN32_WINNT
 
-#    include <assert.h>
+#   include <assert.h>
 
-/**
- * Static initializer for a mutex variable.
- */
+/// Windows mutex structure.
+typedef struct _ac_mswin_mutex
+{
+    INIT_ONCE           init_block;         ///< Init block to support on-demand one-time
+                                            ///< initialization.
+    CRITICAL_SECTION    critical_section;   ///< Critical section to provide mutex functionality.
+} ac_mutex;
+
+/// Static initializer for a mutex variable.
 #   define AC_STATIC_MUTEX_INIT { INIT_ONCE_STATIC_INIT }
 
 /**
