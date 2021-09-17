@@ -9,6 +9,9 @@
 #ifndef ALPHA_CAELI_COMPILER_H_
 #define ALPHA_CAELI_COMPILER_H_
 
+/// Mark a parameter as unused.
+#define AC_UNUSED(x) ((void) (x))
+
 /**
  * @def AC_DECLARE_INLINE
  *

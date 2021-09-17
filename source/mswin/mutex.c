@@ -6,7 +6,7 @@
  *
  * @brief       Alpha Caeli mutex port implementation for Windows platforms.
  */
-#include "alpha-caeli/api.h"
+#include "alpha-caeli/mutex.h"
 
 #if HAVE_MSWIN_INIT_ONCE && HAVE_MSWIN_CRITICAL_SECTION
 

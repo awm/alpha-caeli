@@ -6,7 +6,7 @@
  *
  * @brief       Alpha Caeli port implementation for FreeRTOS platforms.
  */
-#include "alpha-caeli/api.h"
+#include "alpha-caeli/mutex.h"
 
 #if (HAVE_FREERTOS_STATIC_SEMAPHORE) || defined(HAVE_FREERTOS_SEMAPHORE) && \
     HAVE_FREERTOS_XTASKGETSCHEDULERSTATE

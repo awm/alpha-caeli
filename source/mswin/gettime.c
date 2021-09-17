@@ -6,7 +6,7 @@
  *
  * @brief       Alpha Caeli port implementation to obtain time on Windows platforms.
  */
-#include "alpha-caeli/api.h"
+#include "alpha-caeli/gettime.h"
 
 #if HAVE__FTIME_S
 
