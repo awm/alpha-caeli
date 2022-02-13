@@ -9,7 +9,7 @@
 #ifndef ALPHA_CAELI_MUTEX_H_
 #define ALPHA_CAELI_MUTEX_H_
 
-#include "features.h"
+#include "alpha-caeli/features.h"
 #include "compiler.h"
 
 #if !defined(AC_LOCK) && !defined(AC_UNLOCK) && !defined(AC_STATIC_MUTEX_INIT)

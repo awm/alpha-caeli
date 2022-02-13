@@ -8,6 +8,7 @@
  *              Must be included via api.h.
  */
 #if HAVE_GETTIMEOFDAY
+#   include <stddef.h>
 #   include <sys/time.h>
 
 /**

@@ -39,7 +39,7 @@ target_include_directories(
     ac
     PUBLIC
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_CURRENT_BINARY_DIR}/include/alpha-caeli
+    ${CMAKE_CURRENT_BINARY_DIR}/include
 )
 
 # Add FreeRTOS includes, if applicable.

@@ -1,13 +1,13 @@
 /**
- * @file        ll_features.h
+ * @file        features.h
  * @copyright   2021 Andrew MacIsaac
  * @remark
  *      SPDX-License-Identifier: BSD-2-Clause
  *
- * @brief       Loglib feature detection for default configuration.
+ * @brief       Alpha Caeli feature detection for default configuration.
  */
-#ifndef LL_FEATURES_H_
-#define LL_FEATURES_H_
+#ifndef ALPHA_CAELI_FEATURES_H_
+#define ALPHA_CAELI_FEATURES_H_
 
 /// FreeRTOS dynamically allocated semaphores available?
 #cmakedefine01 HAVE_FREERTOS_SEMAPHORE
@@ -45,4 +45,4 @@
 /// Windows _ftime_s() available?
 #cmakedefine01 HAVE__FTIME_S
 
-#endif /* end LL_FEATURES_H_ */
+#endif /* end ALPHA_CAELI_FEATURES_H_ */

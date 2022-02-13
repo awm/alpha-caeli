@@ -8,6 +8,7 @@
  *              Must be included via api.h.
  */
 #if HAVE_LOCALTIME_R
+#   include <stddef.h>
 #   include <time.h>
 
 /**

@@ -9,7 +9,7 @@
 #ifndef ALPHA_CAELI_LOCALTIME_H_
 #define ALPHA_CAELI_LOCALTIME_H_
 
-#include "features.h"
+#include "alpha-caeli/features.h"
 #include "compiler.h"
 
 #ifndef AC_CONVERT_LOCAL_TIME
