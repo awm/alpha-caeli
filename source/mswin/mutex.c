@@ -10,11 +10,11 @@
 
 #if HAVE_MSWIN_INIT_ONCE && HAVE_MSWIN_CRITICAL_SECTION
 
-AC_DEFINE_INLINE void _ac_lock_mutex(ac_mutex *mutex);
+AC_DEFINE_INLINE void _ac_lock_mutex(ac_mutex_t *mutex);
 
 BOOL _ac_init_mutex(PINIT_ONCE init_once, PVOID param, PVOID *ctx)
 {
-    ac_mutex *mutex = (ac_mutex *) param;
+    ac_mutex_t *mutex = (ac_mutex_t *) param;
     assert(mutex != NULL);
 
     AC_UNUSED(init_once);

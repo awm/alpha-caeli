@@ -22,7 +22,7 @@ typedef struct _ac_mswin_mutex
     INIT_ONCE           init_block;         ///< Init block to support on-demand one-time
                                             ///< initialization.
     CRITICAL_SECTION    critical_section;   ///< Critical section to provide mutex functionality.
-} ac_mutex;
+} ac_mutex_t;
 
 /// Static initializer for a mutex variable.
 #   define AC_STATIC_MUTEX_INIT { INIT_ONCE_STATIC_INIT }
@@ -46,7 +46,7 @@ BOOL _ac_init_mutex
  */
 AC_DECLARE_INLINE void _ac_lock_mutex
 (
-    ac_mutex *mutex ///< Mutex instance pointer.
+    ac_mutex_t *mutex ///< Mutex instance pointer.
 )
 {
     assert(mutex != NULL);

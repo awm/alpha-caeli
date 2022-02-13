@@ -11,7 +11,7 @@
 #   include <pthread.h>
 
 /// POSIX mutex type.
-typedef pthread_mutex_t ac_mutex;
+typedef pthread_mutex_t ac_mutex_t;
 
 /**
  * Static initializer for a mutex variable.

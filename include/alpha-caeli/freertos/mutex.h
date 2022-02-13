@@ -24,7 +24,7 @@ typedef struct _ac_freertos_mutex
 #   else
     Semaphore_t         mutex;      ///< Mutex variable.
 #   endif
-} ac_mutex;
+} ac_mutex_t;
 
 /// Static initializer for a mutex variable.
 #   define AC_STATIC_MUTEX_INIT { false }
@@ -35,7 +35,7 @@ typedef struct _ac_freertos_mutex
  */
 AC_DECLARE_INLINE void _ac_lock_mutex
 (
-    ac_mutex *mutex ///< Mutex instance.
+    ac_mutex_t *mutex ///< Mutex instance.
 )
 {
 #   if HAVE_FREERTOS_STATIC_SEMAPHORE
@@ -68,7 +68,7 @@ AC_DECLARE_INLINE void _ac_lock_mutex
  */
 AC_DECLARE_INLINE void _ac_unlock_mutex
 (
-    ac_mutex *mutex ///< Mutex instance.
+    ac_mutex_t *mutex ///< Mutex instance.
 )
 {
 #   if HAVE_FREERTOS_STATIC_SEMAPHORE

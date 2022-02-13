@@ -11,8 +11,8 @@
 #if (HAVE_FREERTOS_STATIC_SEMAPHORE) || defined(HAVE_FREERTOS_SEMAPHORE) && \
     HAVE_FREERTOS_XTASKGETSCHEDULERSTATE
 
-AC_DEFINE_INLINE void _ac_lock_mutex(ac_mutex *mutex);
-AC_DEFINE_INLINE void _ac_unlock_mutex(ac_mutex *mutex);
+AC_DEFINE_INLINE void _ac_lock_mutex(ac_mutex_t *mutex);
+AC_DEFINE_INLINE void _ac_unlock_mutex(ac_mutex_t *mutex);
 
 #endif /* end (HAVE_FREERTOS_STATIC_SEMAPHORE || HAVE_FREERTOS_SEMAPHORE) &&
               HAVE_FREERTOS_XTASKGETSCHEDULERSTATE */
